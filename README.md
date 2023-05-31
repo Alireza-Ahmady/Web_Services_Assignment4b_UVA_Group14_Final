@@ -12,7 +12,8 @@ Navigate to the folder of the training and testing datasets, then run the follow
 ```bash 
 brane data build ./data.yml
 ```
-## 3- Local execution: Run the following command to execute the pipeline:
+## 3- Local execution: 
+Run the following command to execute the pipeline:
 ```bash
 brane run pipeline.bs
 ```
