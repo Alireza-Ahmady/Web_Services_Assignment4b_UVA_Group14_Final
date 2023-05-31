@@ -1,0 +1,10 @@
+# Set some metadata for this dataset
+name: titanic_test
+owners:
+- Alireza Ahmady
+description: Training set for Titanic Challenge.
+
+# This is the real magic: we tell Brane we mean this file
+access:
+  kind: file
+  path: ./data

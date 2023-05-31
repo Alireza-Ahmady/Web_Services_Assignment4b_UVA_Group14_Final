@@ -1,0 +1,47 @@
+#original code from https://github.com/epi-project/brane-disaster-tweets-example
+#code has been modified to be used in our usecase
+
+name: visualization_titanic
+version: 1.0.0
+kind: ecu # Executable Code Unit
+
+dependencies:
+  - python3
+  - python3-yaml
+
+install:
+  - apt update && apt upgrade -y 
+  - apt install -y pipenv
+
+files:
+  - Pipfile
+  - Pipfile.lock
+  - run.py
+  - __init__.py
+  - visualization.py
+  - result.html
+
+postinstall:
+  - pipenv install --system --deploy
+
+entrypoint:
+  kind: task
+  exec: run.py
+
+actions:
+
+  visualization_action:
+    command:
+      capture: marked
+      args:
+        - visualization_action
+    input:
+      - type: IntermediateResult
+        name: filepath_submission
+      - type: IntermediateResult
+        name: filepath_train_dataset
+      - type: IntermediateResult
+        name: filepath_test_dataset       
+    output:
+      - type: IntermediateResult
+        name: output

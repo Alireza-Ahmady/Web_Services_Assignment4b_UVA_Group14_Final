@@ -1,0 +1,92 @@
+#original code from https://github.com/epi-project/brane-disaster-tweets-example
+#code has been modified to be used in our usecase
+
+name: compute_titanic
+version: 1.0.0
+kind: ecu
+
+# Defines things we need to install
+dependencies:
+- python3
+- python3-yaml
+
+
+install:
+  - apt update && apt upgrade -y
+  - apt install pipenv -y
+
+
+# Specifies the files we need to put in this package
+files:
+  - Pipfile
+  - Pipfile.lock
+  - __init__.py
+  - run.py  
+  - model.py
+  - preprocess.py
+  - submission.py
+
+
+unpack:
+  - pipenv install --system --deploy 
+
+
+# Defines which of the files is the file that the framework will call
+entrypoint:
+  kind: task
+  exec: run.py
+
+# Defines the tasks in this package
+actions:
+  'clean_data':
+    command:
+      capture: marked
+      args:
+        - clean_data
+    input:
+      - type: IntermediateResult
+        name: filepath
+    output:
+      - type: IntermediateResult
+        name: filepath   
+
+  'remove_null_values':
+    command:
+      capture: marked
+      args:
+        - remove_null_values
+    input:
+      - type: IntermediateResult
+        name: filepath
+    output:
+      - type: IntermediateResult
+        name: filepath
+        
+        
+  'train_LR_model':
+    command:
+      capture: marked
+      args:
+        - train_LR_model    
+    input:
+      - type: IntermediateResult
+        name: filepath_dataset     
+    output:
+      - type: IntermediateResult
+        name: filepath_model
+
+
+  'create_submission':
+    command:
+      capture: marked
+      args:
+        - create_submission    
+    input:
+      - type: IntermediateResult
+        name: filepath_test_dataset 
+      - type: IntermediateResult
+        name: filepath_model                    
+    output:
+      - type: IntermediateResult
+        name: filepath_submission
+

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Brane Project Resultst</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <div class="accordion" id="sidebarAccordion">
+                        <div>
+                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted" data-bs-toggle="collapse" data-bs-target="#collapsePlots" aria-expanded="true" aria-controls="collapsePlots">
+                                <span> Dataset Evaluation Plots (Train Dataset)</span>
+                            </h6>
+                            <div id="collapsePlots" class="collapse show">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#item-1">Categorical Attributes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#item-2">Numeric Attributes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#item-3">Correlation Matrix</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted" data-bs-toggle="collapse" data-bs-target="#collapseResults" aria-expanded="false" aria-controls="collapseResults">
+                                <span> Submission Results (Submission & Test Datasets)</span>
+                            </h6>
+                            <div id="collapseResults" class="collapse">
+                                <ul class="nav flex-column mb-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#item-4">Prediction Overview</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#item-5">Categorical Attributes Result</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#item-6">Numeric Attributes Result</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#item-7">Correlation Matrix Result</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h1 class="text-center">Project Results Assignment 4b Group 14 </h1>
+
+                <div id="item-1">
+                    <h3>Categorical Attributes</h3>
+                    <div>{categorical_attributes}</div>
+                </div>
+                <div id="item-2">
+                    <h3>Numeric Attributes</h3>
+                    <div>{numeric_attributes}</div>
+                </div>
+                <div id="item-3">
+                    <h3>Correlation Matrix</h3>
+                    <div>{correlation_matrix}</div>
+                </div>
+                <div id="item-4">
+                    <h3>Prediction Overview</h3>
+                    <div>{prediction_overview}</div>
+                </div>
+                <div id="item-5">
+                    <h3>Categorical Attributes Result</h3>
+                    <div>{categorical_attributes_result}</div>
+                </div>
+                <div id="item-6">
+                    <h3>Numeric Attributes Result</h3>
+                    <div>{numeric_attributes_result}</div>
+                </div>
+                <div id="item-7">
+                    <h3>Correlation Matrix Result</h3>
+                    <div>{correlation_matrix_result}</div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
