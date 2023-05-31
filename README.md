@@ -1,7 +1,7 @@
 ## Web_Services_Assignment4b_UVA_Group14_Final
 
 ## 1- Import packages:
-We assume that you have already installed and configured Brane by following the [ documentation](https://wiki.enablingpersonalizedinterventions.nl/user-guide/welcome.html) of the [Brane](https://github.com/epi-project/brane) framework.
+We assume that you have already installed and configured Brane by following the [ documentation](https://wiki.enablingpersonalizedinterventions.nl/user-guide/welcome.html) of the [Brane](https://github.com/epi-project/brane) Framework.
 Open a terminal that has access to the brane-command and then run:
 ```bash 
 brane import Alireza-Ahmady/Web_Services_Assignment4b_UVA_Group14_Final -c packages/compute/container.yml
