@@ -1,0 +1,60 @@
+// PIPELINE
+//   by Alireza Ahmady
+//
+// Based on work by Tim Müller.
+//
+
+
+import compute_titanic;
+import visualization_titanic;
+
+// Change this location according to your instance
+on "worker" {
+
+
+    //////// Defining initial datasets ////////
+    let train_dataset := new Data{ name := "titanic_train"};    
+    let test_dataset := new Data{ name := "titanic_test"}; 
+
+
+    //////// Preprocessing ////////
+    println("Cleaning dataset...");
+    let train_clean := clean_data(train_dataset);
+    let test_clean := clean_data(test_dataset);
+    
+    println("Removing null values...");
+    let train := remove_null_values(train_clean);
+    let test := remove_null_values(test_clean);
+
+    //////// TRAINING ////////
+
+    println("Training model...");
+    let model := train_LR_model(train);
+    commit_result("LR_model", model);
+    
+    
+    println("Creating Submission...");
+    let submission := create_submission(test, model);
+    commit_result("LR_submission", submission);
+    
+    //////// Visualizing////////
+//    println("Generating survival_percentage plot ...");   
+//    let survival_percentage_plot := plot_survival_percentage(submission);  
+//    commit_result("plot_interface", survival_percentage_plot);
+
+    
+//    println("Generating categorical_attributes plot ...");
+//    let categorical_attributes_plot := plot_categorical_attributes(new Data{ name := "titanic_train" });
+//    commit_result("plot_interface", categorical_attributes_plot);        
+     
+
+//    println("Generating numeric_attributes plot ...");
+//    let numeric_attributes_plot := plot_numeric_attributes(new Data{ name := "titanic_train" });
+//    commit_result("plot_interface", numeric_attributes_plot);  
+
+ 
+    println("Generating interactive plot...");
+    let plot := visualization_action(submission,train_dataset, test_dataset);
+    commit_result("plot_interface", plot);
+     
+    }    
