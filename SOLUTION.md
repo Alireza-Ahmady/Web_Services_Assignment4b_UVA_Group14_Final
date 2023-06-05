@@ -13,5 +13,5 @@ The key observation coming out of this for us is that the usage of BRANE would b
 | Name              | Task          |
 |-------------------|---------------|
 | Alireza Ahmady    | Primarily focused on coding, setting up the Brane environment, creating packages, and implementing various functionalities. Also conducted testing to ensure code functionality and reviewed the document, making changes to contribute to the report.|
-| Abhilash M        | Mainly focused on testing and debugging the implementation, as well as creating presentations. Also contributed to setting up the Brane environment and actively worked on the documentation. |
-| Niveditha Govindu | Mainly focused on the report, while also contributing to testing, debugging, and understanding the machine learning algorithm. |
+| Abhilash M        | Mainly focused on testing and debugging the implementation, as well as creating presentations. Also contributed to setting up the Brane environment and actively worked on the documentation.|
+| Niveditha Govindu | Mainly focused on the report, while also contributing to testing, debugging, and understanding the machine learning algorithm.|
